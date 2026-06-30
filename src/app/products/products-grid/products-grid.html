@@ -1,9 +1,9 @@
 <div class="products-container">
-  <p>Total products: {{ products().length }}</p>
+<!--   <p>Total products: {{ products().length }}</p> -->
 
   <div class="products-grid">
     @for (product of products(); track $index) {
-      <app-products-card />
+      <app-products-card [product]="product" />
     } @empty {
       <div class="empty-state">
         <mat-icon>inventory_2</mat-icon>
