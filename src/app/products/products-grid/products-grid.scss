@@ -3,6 +3,17 @@
   gap: 1rem;
 }
 
+.search-field {
+  display: block;
+  width: 100%;
+}
+
+.search-preview {
+  color: var(--mat-sys-on-surface-variant);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

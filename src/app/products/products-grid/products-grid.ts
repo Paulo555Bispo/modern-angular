@@ -2,14 +2,19 @@ import { Component, signal } from '@angular/core';
 import { ProductsCard } from '../products-card/products-card';
 import { Product } from '../product';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products-grid',
-  imports: [ProductsCard, MatIconModule],
+  imports: [ProductsCard, MatIconModule, MatInputModule, FormsModule, MatFormFieldModule],
   templateUrl: './products-grid.html',
   styleUrl: './products-grid.scss',
 })
 export class ProductsGrid {
+
+  protected readonly searchTerm = signal('');
 
   protected readonly products = signal<Product[]>([
     {
@@ -33,4 +38,12 @@ export class ProductsGrid {
       originalPrice: 19.99,
     }
   ]);
+
+  protected clearSearchTerm() {
+    this.searchTerm.set('');
+  }
+
+  protected trimmedSearchTerm() {
+     this.searchTerm.update((value) => value.trim());
+  }
 }
