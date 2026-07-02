@@ -16,7 +16,7 @@ mat-card-content {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--mat-sys-on-primary);
-  background-color: var(--mat-sys-primary); 
+  background-color: var(--mat-sys-primary);
 }
 
 .price-row {
@@ -35,4 +35,11 @@ mat-card-content {
   font-size: 0.875rem;
   color: var(--mat-sys-on-surface-variant);
   text-decoration: line-through;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
 }
