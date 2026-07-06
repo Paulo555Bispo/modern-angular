@@ -15,6 +15,7 @@ import { CartService } from '../../cart/cart-service';
 })
 export class ProductsGrid {
 
+
   protected readonly searchTerm = signal('');
 
   protected readonly products = signal<Product[]>([
@@ -43,7 +44,7 @@ export class ProductsGrid {
     }
   ]);
 
-  protected readonly cartService = inject(CartService);
+  private readonly cartService = inject(CartService);
 
   protected readonly filteredProducts = computed(() => {
     const term = this.searchTerm().toLocaleLowerCase().trim();
@@ -67,4 +68,5 @@ export class ProductsGrid {
 /*   protected trimmedSearchTerm() {
      this.searchTerm.update((value) => value.trim());
   } */
+
 }
